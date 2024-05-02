@@ -9,6 +9,7 @@ const SectionInfo = ({
   handleChange,
   handleDelete,
   setShowInfo,
+  handleChecked,
 }) => {
   // const [statue, setStatue] = useState(status);
 
@@ -29,7 +30,10 @@ const SectionInfo = ({
     );
     handleClose();
   }
-
+  function checked(e, board, info, task) {
+    // task.checked = e.target.checked;
+    handleChecked(e, board, info, task);
+  }
   return (
     <div className={styles.section_info}>
       <section className={styles.info}>
@@ -39,9 +43,13 @@ const SectionInfo = ({
         <label>Subtasks ({info?.subtasks.length})</label>
         {info?.subtasks.map((task, index) => {
           return (
-            <div className={styles.checkedbox} key={task[index]}>
-              <input type="checkbox" />
-              {task}
+            <div className={styles.checkedbox} key={index}>
+              <input
+                type="checkbox"
+                checked={task.checked}
+                onChange={(e) => checked(e, board, info, task)}
+              />
+              {task.name}
               <br />
             </div>
           );

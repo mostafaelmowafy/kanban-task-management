@@ -23,11 +23,50 @@
   border-radius: 5px;
   cursor: pointer;
   /* width: 20vw; */
-  min-width: 100px;
+  min-width: 80px;
   border-radius: 10px;
   border: solid 2px rgb(68, 68, 76);
 }
 .box h4 {
   color: white;
   margin: 0;
+}
+@media (min-width: 1040px) {
+  .box {
+    width: 20vw;
+  }
+}
+@media (min-width: 850px) and (max-width: 1040px) {
+  .box {
+    width: 18vw;
+  }
+}
+@media (min-width: 767px) and (max-width: 850px) {
+  .box {
+    width: 16vw;
+  }
+  .box h4 {
+    font-size: 14px;
+  }
+  .box p {
+    font-size: 14px;
+  }
+}
+@media (max-width: 850px) {
+  .box h4 {
+    font-size: 14px;
+  }
+  .box p {
+    font-size: 14px;
+  }
+}
+@media (min-width: 588px) and (max-width: 767px) {
+  .box {
+    width: 24vw;
+  }
+}
+@media (min-width: 188px) and (max-width: 588px) {
+  .box {
+    width: 20vw;
+  }
 }

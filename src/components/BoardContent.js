@@ -2,7 +2,13 @@ import { useState } from "react";
 import styles from "../boardContent.module.css";
 import SectionInfo from "./SectionInfo";
 
-function BoardContent({ board, children, handleDelete, handleChange }) {
+function BoardContent({
+  board,
+  children,
+  handleDelete,
+  handleChange,
+  handleChecked,
+}) {
   const [showInfo, setShowInfo] = useState(false);
   const [info, setInfo] = useState("");
   const [status, setStatus] = useState("");
@@ -34,7 +40,10 @@ function BoardContent({ board, children, handleDelete, handleChange }) {
                         onClick={() => handleClick(task, c.status)}
                       >
                         <h4>{task?.name}</h4>
-                        <p>{task?.description}</p>
+                        <p>
+                          {task.numOfSubTasks} of {task?.subtasks.length}{" "}
+                          subtasks
+                        </p>
                       </div>
                     )
                   );
@@ -53,6 +62,7 @@ function BoardContent({ board, children, handleDelete, handleChange }) {
           setShowInfo={setShowInfo}
           handleDelete={handleDelete}
           handleChange={handleChange}
+          handleChecked={handleChecked}
         />
       )}
     </>

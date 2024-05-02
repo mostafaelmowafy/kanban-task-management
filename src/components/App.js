@@ -11,97 +11,6 @@ import ErrorMessage from "./ErrorMessage";
 // Initial Data As Example
 const initialData = [
   {
-    name: "PLatform Launch",
-    colums: [
-      { status: "TODO", num: 4 },
-      { status: "DOING", num: 4 },
-      { status: "DONE", num: 3 },
-    ],
-    boardId: 1,
-    active: false,
-    sections: [
-      {
-        taskID: 1,
-        status: "TODO",
-        name: "build UI for onboarding flow",
-        description: "Bla Bla Bla Bla Bla Bla.......",
-        subtasks: ["build", "Bla Bla Bla"],
-      },
-      {
-        taskID: 2,
-        status: "TODO",
-        name: "build UI for search",
-        description: "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla.......",
-        subtasks: ["STart"],
-      },
-      {
-        taskID: 3,
-        status: "TODO",
-        name: "Build setting UI",
-        description: "Bla Bla Bla Bla Bla Bla.......",
-        subtasks: ["build", "Bla Bla Bla"],
-      },
-      {
-        taskID: 4,
-        status: "TODO",
-        name: "QA and test all major user journeys",
-        description: "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla.......",
-        subtasks: ["STart", "STart"],
-      },
-
-      {
-        taskID: 5,
-        status: "DOING",
-        name: "Design setting and search pages",
-        description: "Bla Bla Bla Bla Bla Bla.......",
-        subtasks: ["build", "Bla Bla Bla"],
-      },
-      {
-        taskID: 6,
-        status: "DOING",
-        name: "Add account management endpoints",
-        description: "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla.......",
-        subtasks: ["STart", "Bla Bla Bla", "STart"],
-      },
-      {
-        taskID: 7,
-        status: "DOING",
-        name: "Design onboarding flow",
-        description: "Bla Bla Bla Bla Bla Bla.......",
-        subtasks: ["build", "Bla Bla Bla"],
-      },
-      {
-        taskID: 8,
-        status: "DOING",
-        name: "Add search enpoints",
-        description: "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla.......",
-        subtasks: ["STart", "Bla Bla Bla"],
-      },
-
-      {
-        taskID: 9,
-        status: "DONE",
-        name: "Conduct 5 wireframe tests",
-        description: "Bla Bla Bla Bla Bla Bla.......",
-        subtasks: ["build", "Bla Bla Bla"],
-      },
-      {
-        taskID: 10,
-        status: "DONE",
-        name: "Market discovery",
-        description: "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla.......",
-        subtasks: ["STart", "Bla Bla Bla", "STart"],
-      },
-      {
-        taskID: 11,
-        status: "DONE",
-        name: "Competitor analysis",
-        description: "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla.......",
-        subtasks: ["STart", "Bla Bla Bla", "STart"],
-      },
-    ],
-  },
-  {
     name: "Roadmap",
     colums: [
       { status: "TODO", num: 2 },
@@ -116,14 +25,19 @@ const initialData = [
         status: "TODO",
         name: "Next.JS",
         description: "Bla Bla Bla Bla Bla Bla.......",
-        subtasks: ["build", "Bla Bla Bla"],
+        subtasks: [
+          { name: "build", checked: true },
+          { name: "Bla Bla Bla", checked: false },
+        ],
+        numOfSubTasks: 0,
       },
       {
         taskID: 2,
         status: "TODO",
         name: "tailwind css",
         description: "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla.......",
-        subtasks: ["STart"],
+        subtasks: [{ name: "STart", checked: false }],
+        numOfSubTasks: 0,
       },
 
       {
@@ -131,7 +45,11 @@ const initialData = [
         status: "DOING",
         name: "React",
         description: "Bla Bla Bla Bla Bla Bla.......",
-        subtasks: ["build", "Bla Bla Bla"],
+        subtasks: [
+          { name: "build", checked: true },
+          { name: "Bla Bla Bla", checked: false },
+        ],
+        numOfSubTasks: 1,
       },
 
       {
@@ -139,48 +57,72 @@ const initialData = [
         status: "DONE",
         name: "HTML",
         description: "Bla Bla Bla Bla Bla Bla.......",
-        subtasks: ["build", "Bla Bla Bla"],
+        subtasks: [
+          { name: "build", checked: true },
+          { name: "Bla Bla Bla", checked: true },
+        ],
+        numOfSubTasks: 2,
       },
       {
         taskID: 5,
         status: "DONE",
         name: "CSS",
         description: "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla.......",
-        subtasks: ["STart", "Bla Bla Bla", "STart"],
+        subtasks: [
+          { name: "build", checked: true },
+          { name: "Bla Bla Bla", checked: true },
+          { name: "build 2", checked: true },
+          { name: "STart", checked: true },
+        ],
+        numOfSubTasks: 4,
       },
       {
         taskID: 6,
         status: "DONE",
         name: "JavaScript",
         description: "Bla Bla Bla Bla Bla Bla.......",
-        subtasks: ["build", "Bla Bla Bla"],
+        subtasks: [
+          { name: "build", checked: true },
+          { name: "Bla Bla Bla", checked: true },
+        ],
+        numOfSubTasks: 2,
       },
       {
         taskID: 7,
         status: "DONE",
         name: "BootStrap 5",
         description: "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla.......",
-        subtasks: ["STart", "Bla Bla Bla", "STart"],
+        subtasks: [
+          { name: "build", checked: true },
+          { name: "Bla Bla Bla", checked: true },
+          { name: "STart", checked: true },
+        ],
+        numOfSubTasks: 3,
       },
       {
         taskID: 8,
         status: "DONE",
         name: "SASS",
         description: "Bla Bla Bla Bla Bla Bla.......",
-        subtasks: ["build", "Bla Bla Bla"],
+        subtasks: [{ name: "build", checked: true }],
+        numOfSubTasks: 1,
       },
       {
         taskID: 7,
         status: "DONE",
         name: "Typescript",
         description: "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla.......",
-        subtasks: ["STart", "Bla Bla Bla", "STart"],
+        subtasks: [
+          { name: "build", checked: true },
+          { name: "Bla Bla Bla", checked: true },
+          { name: "STart", checked: true },
+        ],
+        numOfSubTasks: 3,
       },
     ],
   },
 ];
 
-// const response = [];
 function App() {
   const [boards, setBoards] = useState(initialData);
   const [board, setBoard] = useState(boards[0]);
@@ -384,6 +326,26 @@ function App() {
     setIsWelcom(true);
   }
 
+  function checked(e, board, info, task) {
+    setBoards(
+      (boards) => [...boards],
+      boards?.map((b) => {
+        b.name === board.name &&
+          b.sections.map((s) => {
+            s.name === info.name &&
+              s.subtasks.map((t) => {
+                return t.name === task.name
+                  ? ((t.checked = e.target.checked),
+                    t.checked === true
+                      ? (s.numOfSubTasks = s.numOfSubTasks + 1)
+                      : (s.numOfSubTasks = s.numOfSubTasks - 1))
+                  : t.checked;
+              });
+          });
+      })
+    );
+  }
+
   return (
     <div className="App">
       {showSideBar || (
@@ -407,6 +369,7 @@ function App() {
           handleChange={changeStatus}
           handleDelete={deleteTask}
           isPhone={isPhone}
+          handleChecked={checked}
         >
           <Header
             board={board}

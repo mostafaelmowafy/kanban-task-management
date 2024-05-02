@@ -8,12 +8,11 @@
 }
 .mainHeader header h2 {
   flex: 1;
-  position: relative;
+  /* position: relative; */
 }
 .mainHeader header h2 .downIcon {
   position: absolute;
-  top: 10px;
-  left: 200px;
+  margin: 10px 0 0 10px;
   cursor: pointer;
 }
 .mainHeader header button {
