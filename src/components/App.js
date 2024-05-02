@@ -26,7 +26,7 @@ const initialData = [
         name: "Next.JS",
         description: "Bla Bla Bla Bla Bla Bla.......",
         subtasks: [
-          { name: "build", checked: true },
+          { name: "build", checked: false },
           { name: "Bla Bla Bla", checked: false },
         ],
         numOfSubTasks: 0,
