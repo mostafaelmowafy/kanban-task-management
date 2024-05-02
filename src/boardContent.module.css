@@ -1,0 +1,33 @@
+.main {
+  flex: 1;
+}
+.board_content {
+  padding: 20px;
+  color: #808492;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.status span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgb(25, 197, 236);
+  margin-inline-end: 3px;
+}
+.box {
+  background-color: #2c2c38;
+  padding: 10px;
+  margin-block-end: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  /* width: 20vw; */
+  min-width: 100px;
+  border-radius: 10px;
+  border: solid 2px rgb(68, 68, 76);
+}
+.box h4 {
+  color: white;
+  margin: 0;
+}

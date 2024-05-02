@@ -1,0 +1,68 @@
+.section_info {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.info {
+  background-color: #2c2c38;
+  padding: 20px 30px 40px 20px;
+  color: white;
+  font-size: 12px;
+  min-width: 250px;
+  border-radius: 10px;
+  border: solid 2px rgb(68, 68, 76);
+}
+.info h4 {
+  margin-top: 0;
+}
+.checkedbox {
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-block: 10px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+.checkedbox input {
+  margin-inline-end: 8px;
+}
+.info label {
+  margin-bottom: 4px;
+  display: block;
+}
+.info select {
+  background-color: #2c2c38;
+  border: solid 1px #808492;
+  padding: 5px;
+  margin-bottom: 10px;
+  color: white;
+}
+.info select {
+  width: 100%;
+}
+.info .buttons {
+  display: flex;
+  margin-block-start: 10px;
+  justify-content: space-between;
+  gap: 5%;
+}
+.info button {
+  width: 45%;
+  border: 0;
+  padding: 10px 15px;
+  border-radius: 25px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+.info .ok {
+  background-color: rgb(100, 95, 198);
+}
+.info .delete {
+  background-color: rgb(199, 68, 105);
+  /* margin: 10px 5%; */
+}

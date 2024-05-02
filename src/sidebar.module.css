@@ -1,0 +1,74 @@
+.side_bar {
+  background-color: #2c2c38;
+  min-height: 100vh;
+  min-width: 210px;
+  margin: 0;
+  padding-inline-end: 15px;
+  color: #808492;
+  border-right: solid 1px #808492;
+}
+.side_bar_h1 {
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+  color: white;
+  padding: 20px 0 20px 20px;
+  cursor: pointer;
+}
+/* @media (max-width: 767px) {
+  .side_bar {
+    display: none;
+  }
+} */
+.all_boards {
+  display: block;
+  margin: 0 0 20px 20px;
+}
+.board {
+  display: flex;
+  align-items: center;
+}
+.boardName {
+  display: block;
+  margin-block: 10px;
+  cursor: pointer;
+  width: 80%;
+  padding: 5px 20px;
+  border-radius: 0 30px 30px 0;
+}
+.boardName:hover {
+  background-color: rgb(100, 95, 198);
+  color: white;
+}
+.active {
+  background-color: rgb(100, 95, 198);
+  color: white;
+}
+.creat_board {
+  padding-inline-start: 20px;
+  color: rgb(97, 90, 179);
+  cursor: pointer;
+}
+.creat_board:hover {
+  font-weight: bold;
+}
+.side_bar .delete {
+  font-size: 10px;
+  margin-inline: 10px;
+  cursor: pointer;
+}
+.side_bar .delete:hover {
+  font-size: 12px;
+}
+.error {
+  display: block;
+  margin-block-end: 20px;
+  margin-inline-start: 20px;
+  color: red;
+}
+.loading {
+  display: block;
+  margin-block-end: 20px;
+  margin-inline-start: 20px;
+  color: rgb(192, 179, 0);
+}
