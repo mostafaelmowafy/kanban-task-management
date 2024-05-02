@@ -9,9 +9,180 @@ import Loader from "./Loader";
 import ErrorMessage from "./ErrorMessage";
 
 // Initial Data As Example
+const initialData = [
+  {
+    name: "PLatform Launch",
+    colums: [
+      { status: "TODO", num: 4 },
+      { status: "DOING", num: 4 },
+      { status: "DONE", num: 3 },
+    ],
+    boardId: 1,
+    active: false,
+    sections: [
+      {
+        taskID: 1,
+        status: "TODO",
+        name: "build UI for onboarding flow",
+        description: "Bla Bla Bla Bla Bla Bla.......",
+        subtasks: ["build", "Bla Bla Bla"],
+      },
+      {
+        taskID: 2,
+        status: "TODO",
+        name: "build UI for search",
+        description: "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla.......",
+        subtasks: ["STart"],
+      },
+      {
+        taskID: 3,
+        status: "TODO",
+        name: "Build setting UI",
+        description: "Bla Bla Bla Bla Bla Bla.......",
+        subtasks: ["build", "Bla Bla Bla"],
+      },
+      {
+        taskID: 4,
+        status: "TODO",
+        name: "QA and test all major user journeys",
+        description: "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla.......",
+        subtasks: ["STart", "STart"],
+      },
+
+      {
+        taskID: 5,
+        status: "DOING",
+        name: "Design setting and search pages",
+        description: "Bla Bla Bla Bla Bla Bla.......",
+        subtasks: ["build", "Bla Bla Bla"],
+      },
+      {
+        taskID: 6,
+        status: "DOING",
+        name: "Add account management endpoints",
+        description: "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla.......",
+        subtasks: ["STart", "Bla Bla Bla", "STart"],
+      },
+      {
+        taskID: 7,
+        status: "DOING",
+        name: "Design onboarding flow",
+        description: "Bla Bla Bla Bla Bla Bla.......",
+        subtasks: ["build", "Bla Bla Bla"],
+      },
+      {
+        taskID: 8,
+        status: "DOING",
+        name: "Add search enpoints",
+        description: "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla.......",
+        subtasks: ["STart", "Bla Bla Bla"],
+      },
+
+      {
+        taskID: 9,
+        status: "DONE",
+        name: "Conduct 5 wireframe tests",
+        description: "Bla Bla Bla Bla Bla Bla.......",
+        subtasks: ["build", "Bla Bla Bla"],
+      },
+      {
+        taskID: 10,
+        status: "DONE",
+        name: "Market discovery",
+        description: "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla.......",
+        subtasks: ["STart", "Bla Bla Bla", "STart"],
+      },
+      {
+        taskID: 11,
+        status: "DONE",
+        name: "Competitor analysis",
+        description: "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla.......",
+        subtasks: ["STart", "Bla Bla Bla", "STart"],
+      },
+    ],
+  },
+  {
+    name: "Roadmap",
+    colums: [
+      { status: "TODO", num: 2 },
+      { status: "DOING", num: 1 },
+      { status: "DONE", num: 6 },
+    ],
+    boardId: 1,
+    active: false,
+    sections: [
+      {
+        taskID: 1,
+        status: "TODO",
+        name: "Next.JS",
+        description: "Bla Bla Bla Bla Bla Bla.......",
+        subtasks: ["build", "Bla Bla Bla"],
+      },
+      {
+        taskID: 2,
+        status: "TODO",
+        name: "tailwind css",
+        description: "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla.......",
+        subtasks: ["STart"],
+      },
+
+      {
+        taskID: 3,
+        status: "DOING",
+        name: "React",
+        description: "Bla Bla Bla Bla Bla Bla.......",
+        subtasks: ["build", "Bla Bla Bla"],
+      },
+
+      {
+        taskID: 4,
+        status: "DONE",
+        name: "HTML",
+        description: "Bla Bla Bla Bla Bla Bla.......",
+        subtasks: ["build", "Bla Bla Bla"],
+      },
+      {
+        taskID: 5,
+        status: "DONE",
+        name: "CSS",
+        description: "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla.......",
+        subtasks: ["STart", "Bla Bla Bla", "STart"],
+      },
+      {
+        taskID: 6,
+        status: "DONE",
+        name: "JavaScript",
+        description: "Bla Bla Bla Bla Bla Bla.......",
+        subtasks: ["build", "Bla Bla Bla"],
+      },
+      {
+        taskID: 7,
+        status: "DONE",
+        name: "BootStrap 5",
+        description: "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla.......",
+        subtasks: ["STart", "Bla Bla Bla", "STart"],
+      },
+      {
+        taskID: 8,
+        status: "DONE",
+        name: "SASS",
+        description: "Bla Bla Bla Bla Bla Bla.......",
+        subtasks: ["build", "Bla Bla Bla"],
+      },
+      {
+        taskID: 7,
+        status: "DONE",
+        name: "Typescript",
+        description: "Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla.......",
+        subtasks: ["STart", "Bla Bla Bla", "STart"],
+      },
+    ],
+  },
+];
+
 // const response = [];
 function App() {
-  const [boards, setBoards] = useState([]);
+  const [boards, setBoards] = useState(initialData);
   const [board, setBoard] = useState(boards[0]);
   const [boardName, setBoardName] = useState(boards[0]?.name);
   const [isLoading, setIsLoading] = useState(false);
@@ -22,31 +193,31 @@ function App() {
   // const isTablet = useMediaQuery({ maxWidth: 991 });
   const isPhone = useMediaQuery({ maxWidth: 767 });
 
-  useEffect(() => {
-    async function getInitialData() {
-      try {
-        setIsLoading(true);
-        setError("");
-        // Get the data from API or Database here and store it in `response` variable
-        const response = await fetch("http://localhost:8000/boards");
-        if (!response.ok)
-          throw new Error(`Something went wrong with fetching movies.`);
-        setBoards([]);
+  // useEffect(() => {
+  //   async function getInitialData() {
+  //     try {
+  //       setIsLoading(true);
+  //       setError("");
+  //       // Get the data from API or Database here and store it in `response` variable
+  //       const response = await fetch("http://localhost:8000/boards");
+  //       if (!response.ok)
+  //         throw new Error(`Something went wrong with fetching movies.`);
+  //       setBoards([]);
 
-        const data = await response.json();
-        setError("");
-        setBoards(data);
-        setIsLoading(false);
-      } catch (err) {
-        if (err.name !== "AbortError") {
-          setError(err.message);
-        }
-      } finally {
-        setIsLoading(false);
-      }
-    }
-    getInitialData();
-  }, []);
+  //       const data = await response.json();
+  //       setError("");
+  //       setBoards(data);
+  //       setIsLoading(false);
+  //     } catch (err) {
+  //       if (err.name !== "AbortError") {
+  //         setError(err.message);
+  //       }
+  //     } finally {
+  //       setIsLoading(false);
+  //     }
+  //   }
+  //   getInitialData();
+  // }, []);
 
   // Function For Delete Task By His Name And Description In The Board
   // function deleteTask(name, description, handleClose) {
